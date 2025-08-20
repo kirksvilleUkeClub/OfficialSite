@@ -1,48 +1,279 @@
-<!-- index.html (example) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kirksville Ukulele Club</title>
-  <link rel="manifest" href="/OfficialSite/manifest.json">
-  <link rel="stylesheet" href="/OfficialSite/assets/css/styles.css" />
+  <style>
+    :root {
+      --blue: #3a8efc;
+      --black: #0d0d0d;
+      --dark-gray: #1a1a1a;
+      --gray: #333333;
+      --light-gray: #aaaaaa;
+      --gold: #d4af37;
+      --white: #f0f0f0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: var(--black);
+      color: var(--white);
+    }
+
+    .banner {
+      width: 100%;
+      display: block;
+    }
+
+    header {
+      background: var(--gray);
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 4px solid var(--blue);
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 0.2rem 0;
+      font-size: 1.1rem;
+      color: var(--gold);
+    }
+
+    nav {
+      background: var(--dark-gray);
+      padding: 0.6rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: var(--light-gray);
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: var(--gray);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--blue);
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 0.3rem;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    footer {
+      background: var(--gray);
+      color: var(--light-gray);
+      text-align: center;
+      padding: 1rem;
+      border-top: 3px solid var(--blue);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+  <!-- Banner Image -->
+  <img src="Ukulele_Club_banner.jpg" alt="Ukulele Club Banner" class="banner" />
+
+  <!-- Header with logo -->
   <header>
+    <img src="Uke_Club_Logo.jpg" alt="Uke Club Logo" class="logo" />
     <h1>Kirksville Ukulele Club</h1>
-    <nav>
-      <ul>
-        <li><a href="/OfficialSite/">Home</a></li>
-        <li><a href="/OfficialSite/about.html">About</a></li>
-        <li><a href="/OfficialSite/events.html">Events</a></li>
-        <li><a href="/OfficialSite/songbook.html">Songbook</a></li>
-        <li><a href="/OfficialSite/join.html">Join Us</a></li>
-        <li><a href="/OfficialSite/contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <p>Strumming Together Since 2023</p>
   </header>
 
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#events">Events</a>
+    <a href="#join">Join Us</a>
+    <a href="#contact">Contact</a>
+    <a href="#social">Follow Us</a>
+  </nav>
+
+  <!-- Main Content -->
   <main>
-    <image>433383186_391725200281357_2217049787415416924_n.jpg</image>
-    <!-- Placeholder: Add a general description and request for content from collaborators -->
-    <section>
-      <h2>Welcome to the Kirksville Ukulele Club!</h2>
-      <p>[Insert general welcome text here.]</p>
-      <p><em>Collaborators: Please provide a brief, friendly intro for the homepage.</em></p>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>The Kirksville Ukulele Club is a community group of music lovers who enjoy playing, learning, and sharing the joy of ukulele music. All skill levels are welcome — from complete beginners to seasoned strummers!</p>
     </section>
-<section>
-  <h2>[Page Title]</h2>
-  <p>[Insert general description here.]</p>
-  <p><em>Collaborators: Please provide final content for this section.</em></p>
+
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li><strong>Weekly Jam Session:</strong> Every Tuesday at 6 PM, Downtown Kirksville Park</li>
+        <li><strong>Beginner Workshop:</strong> First Saturday of the month, 2 PM at the Public Library</li>
+        <li><strong>Open Mic Night:</strong> August 30th, 7 PM at Java Co Café</li>
+      </ul>
+    </section>
+<section id="gallery">
+  <h2>Photo Gallery</h2>
+  <div class="carousel">
+    <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
+    <div class="carousel-track">
+      <img src="photo1.jpg" alt="Club photo 1" class="carousel-img">
+      <img src="photo2.jpg" alt="Club photo 2" class="carousel-img">
+      <img src="photo3.jpg" alt="Club photo 3" class="carousel-img">
+    </div>
+    <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+  </div>
 </section>
 
+<style>
+  .carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 300%;
+  }
+
+  .carousel-img {
+    width: 100%;
+    flex-shrink: 0;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .carousel-btn:hover {
+    background-color: rgba(58, 142, 252, 0.8);
+  }
+
+  .carousel-btn.prev {
+    left: 0;
+  }
+
+  .carousel-btn.next {
+    right: 0;
+  }
+</style>
+
+<script>
+  let currentSlide = 0;
+  const track = document.querySelector('.carousel-track');
+  const slides = document.querySelectorAll('.carousel-img');
+
+  function updateCarousel() {
+    const slideWidth = slides[0].clientWidth;
+    track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateCarousel();
+  }
+
+  // Auto-play every 5 seconds
+  setInterval(nextSlide, 5000);
+
+  window.addEventListener('resize', updateCarousel);
+  window.addEventListener('load', updateCarousel);
+</script>
+
+    <section id="join">
+      <h2>Join Us</h2>
+      <p>Want to strum along with us? No experience needed. Just bring a uke and a smile! Come to any jam session or email us for more info.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email us at: <a href="mailto:kirksvilleukeclub@example.com">kirksvilleukeclub@example.com</a></p>
+    </section>
+
+    <section id="social">
+      <h2>Follow Us</h2>
+      <p>Stay connected and see what we’re strumming up next!</p>
+      <p>
+        <a href="https://www.facebook.com/kirksvilleuke/" target="_blank">🎵 Facebook</a><br>
+        <a href="https://www.youtube.com/@kirksvilleukeclub" target="_blank">📺 YouTube Channel</a>
+      </p>
+    </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Kirksville Ukulele Club</p>
+    <p>&copy; 2025 Kirksville Ukulele Club. Keep on strumming!</p>
+    <p>
+      <a href="https://www.facebook.com/kirksvilleuke/" target="_blank">Facebook</a> |
+      <a href="https://www.youtube.com/@kirksvilleukeclub" target="_blank">YouTube</a>
+    </p>
   </footer>
-
-  <script src="/OfficialSite/sw-register.js"></script>
 </body>
 </html>
